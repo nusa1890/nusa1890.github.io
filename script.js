@@ -81,19 +81,19 @@ const setValuesOfAir = (airData) => {
 
   switch (aqi) {
     case 1:
-      airStat = "Baik";
+      airStat = "Sehat";
       color = "rgb(19, 201, 28)";
       break;
     case 2:
-      airStat = "Cukup";
+      airStat = "Baik";
       color = "rgb(15, 134, 25)";
       break;
     case 3:
-      airStat = "Tidak Sehat Bagi Kelompok Sensitif";
+      airStat = "Tidak Sehat";
       color = "rgb(201, 204, 13)";
       break;
     case 4:
-      airStat = "Tidak Sehat";
+      airStat = "Sangat Tidak Sehat";
       color = "rgb(204, 83, 13)";
       break;
     case 5:
