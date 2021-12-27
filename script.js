@@ -8,9 +8,8 @@ const componentsEle = document.querySelectorAll(".component-val");
 const componentsPred = document.querySelectorAll(".component-pred");
 
 const appId = "2d3a228abd6efc850e7de37037b03f2d";
-// Get your own API Key from https://home.openweathermap.org/api_keys
-// const link = "https://api.openweathermap.org/data/2.5/air_pollution"; // API end point
-// NEW : http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={API key}
+
+
 const getUserLocation = () => {
   // Get user Location
   if (navigator.geolocation) {
@@ -29,17 +28,17 @@ const onPositionGathered = (pos) => {
   let lat = pos.coords.latitude.toFixed(4),
     lon = pos.coords.longitude.toFixed(4);
 
-  // Set values of Input for user to know
+
   latInp.value = lat;
   lonInp.value = lon;
 
-  // Get Air data from weather API
+
   getAirQuality(lat, lon);
   getAirQualityPrediction(lat, lon)
 };
 
 const getAirQuality = async (lat, lon) => {
-  // Get data from api
+
   const rawData = await fetch(
     `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${appId}`
   ).catch((err) => {
@@ -55,7 +54,7 @@ const getAirQuality = async (lat, lon) => {
 };
 
 const getAirQualityPrediction = async (lat, lon) => {
-  // Get data from api
+
   const rawData = await fetch(
     `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${lat}&lon=${lon}&appid=${appId}`
   ).catch((err) => {
@@ -74,10 +73,10 @@ const setValuesOfAir = (airData) => {
   let airStat = "",
     color = "";
 
-  // Set Air Quality Index
+
   airQuality.innerText = aqi;
 
-  // Set status of air quality
+
 
   switch (aqi) {
     case 1:
